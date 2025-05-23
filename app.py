@@ -53,22 +53,24 @@ while pokemonAdiversario['vida'] > 0  and  pokemonDoJogador['vida'] > 0:
         print(Fore.LIGHTMAGENTA_EX + "VOCÊ FUGIU " + Style.RESET_ALL ) 
         break
 
-    pokemonAdiversario["modoDefesa"] = False
+    
+    pokemonAdiversario["modoDefesa"]=False
 
     #turno do adiversario 
     escolhaAdiversario = int(random.randint(1,2))
     if escolhaAdiversario == 1: 
         if pokemonDoJogador['modoDefesa']:
             danoCausadoAdiversario = (pokemonAdiversario["dano"] - pokemonDoJogador["defesa"])//2
-            pokemonAdiversario["vida"] = pokemonAdiversario["vida"] - danoCausadoAdiversario
+            pokemonDoJogador["vida"] = pokemonDoJogador["vida"] - danoCausadoAdiversario
         else: 
             danoCausadoAdiversario = pokemonAdiversario["dano"] - pokemonDoJogador["defesa"]
-            pokemonAdiversario["vida"] = pokemonAdiversario["vida"] - danoCausadoAdiversario
+            pokemonDoJogador["vida"] = pokemonDoJogador["vida"] - danoCausadoAdiversario
         print(Fore.GREEN + " O adiversario te atacou  e causou ", danoCausadoAdiversario, " agora vc tem ", pokemonDoJogador["vida"], ""+ Style.RESET_ALL)
         print("\n")
     else: 
-        pokemonAdiversario["modoDedefesa"] = True
-        print(Fore.GREEN + " O adevesario de defendeu"+ Style.RESET_ALL)
+        pokemonAdiversario["modoDefesa"] = True
+        print(Fore.GREEN + " O adevesario se defendeu"+ Style.RESET_ALL)
 
-pokemonDoJogador["modoDefesa"] = False
+    pokemonDoJogador["modoDefesa"] = False
+    print(Fore.BLUE + "sua vida: ",pokemonDoJogador['vida'],"" + Fore.LIGHTYELLOW_EX + "|" + Fore.GREEN + " vida inimigo: ",pokemonAdiversario["vida"],""+ Style.RESET_ALL)
    
