@@ -73,4 +73,8 @@ while pokemonAdiversario['vida'] > 0  and  pokemonDoJogador['vida'] > 0:
 
     pokemonDoJogador["modoDefesa"] = False
     print(Fore.BLUE + "sua vida: ",pokemonDoJogador['vida'],"" + Fore.LIGHTYELLOW_EX + "|" + Fore.GREEN + " vida inimigo: ",pokemonAdiversario["vida"],""+ Style.RESET_ALL)
-   
+
+if pokemonDoJogador["vida"] > pokemonAdiversario["vida"]: 
+    print(Fore.LIGHTMAGENTA_EX+ "VOCÊ GANHOU " + Style.RESET_ALL)
+else: 
+    print(Fore.RED + "VOCÊ PERDEU"+ Style.RESET_ALL)
